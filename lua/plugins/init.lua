@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -78,12 +78,14 @@ return {
   -- Folder tree
   {
     "nvim-tree/nvim-tree.lua",
-    opts = {
-      filters = {
-        dotfiles = false,
-        git_ignored = false,
-      },
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
     },
+    config = function()
+      require "configs.nvim-tree"
+    end,
   },
 
   -- Code folding
@@ -117,4 +119,17 @@ return {
     lazy = false,
   },
 
+  -- Sessions
+  {
+    "rmagatti/auto-session",
+    lazy = false,
+
+    ---enables autocomplete for opts
+    ---@module "auto-session"
+    ---@type AutoSession.Config
+    opts = {
+      suppressed_dirs = { "~/", "~/Documents", "~/Downloads", "/" },
+      -- log_level = 'debug',
+    },
+  },
 }

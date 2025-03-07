@@ -9,4 +9,7 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 
 map("n", "<leader>ng", "<cmd>Neogit<cr>", { noremap = true, silent = true })
 
+map("n", "<leader>do", "<cmd>DiffviewOpen<cr>", { noremap = true, silent = true })
+map("n", "<leader>dc", "<cmd>DiffviewClose<cr>", { noremap = true, silent = true })
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

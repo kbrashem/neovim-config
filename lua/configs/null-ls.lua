@@ -17,6 +17,7 @@ require("mason-null-ls").setup {
     "sqlfluff",
     "dockerfile-language-server",
     "isort",
+    "clangd",
   },
   automatic_installation = true,
   handlers = {},

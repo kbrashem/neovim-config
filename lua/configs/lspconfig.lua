@@ -50,3 +50,10 @@ lspconfig.dockerls.setup {
   capabilities = nvlsp.capabilities,
   filetypes = { "Dockerfile", "dockerfile" },
 }
+
+-- cpp
+lspconfig.clangd.setup {
+  on_attach = nvlsp.on_attach,
+  capabilities = nvlsp.capabilities,
+  filetypes = { "cpp", "c" },
+}

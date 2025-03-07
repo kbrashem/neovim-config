@@ -46,3 +46,8 @@
 - `zo` - Open Fold
 - `zA` - Open all Folds
 - `zM` - Close all Folds
+
+### Diff View
+
+- `<leader> + do` - Open diff view
+- `<leader> + dc` - Close diff view

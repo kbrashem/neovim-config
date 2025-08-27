@@ -24,7 +24,8 @@
 ### LSP
 
 - `:LspInfo` - Show LSP information
-- `gd` - Go to definition
+- `Ctrl + ]` - Go to definition
+- `Ctrl + t` - Go back
 - `K` - Hover
 - `Ctrl + e` - Exit suggestions
 
@@ -34,6 +35,7 @@
 - `Alt + ]` - Suggest another completion
 - `:CopilotChat <message>` - Send a message to Copilot
 - `:CopilotChat` - Open chat window
+- `Ctrl + s` - Send message in chat window
 
 ### Conform
 

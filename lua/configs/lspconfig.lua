@@ -57,3 +57,24 @@ lspconfig.clangd.setup {
   capabilities = nvlsp.capabilities,
   filetypes = { "cpp", "c" },
 }
+
+-- rust
+-- lspconfig.rustanalyzer.setup {
+--   on_attach = nvlsp.on_attach,
+--   capabilities = nvlsp.capabilities,
+--   filetypes = { "rust" },
+--   settings = {
+--     ["rust-analyzer"] = {
+--       assist = {
+--         importGranularity = "module",
+--         importPrefix = "by_self",
+--       },
+--       cargo = {
+--         loadOutDirsFromCheck = true,
+--       },
+--       procMacro = {
+--         enable = true,
+--       },
+--     },
+--   },
+-- }

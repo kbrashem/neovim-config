@@ -40,6 +40,8 @@ return {
         "yaml",
         "diff",
         "markdown_inline",
+        "rust",
+        "toml",
       },
     },
   },
@@ -70,6 +72,7 @@ return {
       { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
       { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
     },
+    build = "make tiktoken",
     config = function()
       require "configs.copilot-chat"
     end,
@@ -119,17 +122,17 @@ return {
     lazy = false,
   },
 
-  -- Sessions
-  {
-    "rmagatti/auto-session",
-    lazy = false,
-
-    ---enables autocomplete for opts
-    ---@module "auto-session"
-    ---@type AutoSession.Config
-    opts = {
-      suppressed_dirs = { "~/", "~/Documents", "~/Downloads", "/" },
-      -- log_level = 'debug',
-    },
-  },
+  --   -- Sessions
+  --   {
+  --     "rmagatti/auto-session",
+  --     lazy = false,
+  --
+  --     ---enables autocomplete for opts
+  --     ---@module "auto-session"
+  --     ---@type AutoSession.Config
+  --     opts = {
+  --       suppressed_dirs = { "~/", "~/Documents", "~/Downloads", "/" },
+  --       -- log_level = 'debug',
+  --     },
+  --   },
 }

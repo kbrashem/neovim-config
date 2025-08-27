@@ -4,6 +4,7 @@ chat.setup {
   debug = true,
   context = "buffers",
   window = {
-    layout = "float",
+    layout = "vertical",
+    width = 0.2,
   },
 }

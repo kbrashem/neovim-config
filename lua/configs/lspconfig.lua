@@ -1,37 +1,34 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require "lspconfig"
-
--- EXAMPLE
 local servers = { "html", "cssls" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  vim.lsp.config(lsp, {
     on_attach = nvlsp.on_attach,
     on_init = nvlsp.on_init,
     capabilities = nvlsp.capabilities,
-  }
+  })
 end
 
 -- python
-lspconfig.pyright.setup {
+vim.lsp.config("pyright", {
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
   filetypes = { "python" },
-}
+})
 
 -- terraform
-lspconfig.terraformls.setup {
+vim.lsp.config("terraformls", {
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
   filetypes = { "terraform" },
-}
+})
 
 -- yaml
-lspconfig.yamlls.setup {
+vim.lsp.config("yamlls", {
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
   filetypes = { "yaml" },
@@ -42,21 +39,21 @@ lspconfig.yamlls.setup {
       },
     },
   },
-}
+})
 
 -- docker
-lspconfig.dockerls.setup {
+vim.lsp.config("dockerls", {
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
   filetypes = { "Dockerfile", "dockerfile" },
-}
+})
 
 -- cpp
-lspconfig.clangd.setup {
+vim.lsp.config("clangd", {
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
   filetypes = { "cpp", "c" },
-}
+})
 
 -- rust
 -- lspconfig.rustanalyzer.setup {

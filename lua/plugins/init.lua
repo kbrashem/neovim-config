@@ -52,6 +52,18 @@ return {
     cmd = "Glow",
   },
 
+  -- Claude
+  {
+    "greggh/claude-code.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require "configs.claude-code"
+    end,
+  },
+
   -- Copilot
   {
     "zbirenbaum/copilot.lua",

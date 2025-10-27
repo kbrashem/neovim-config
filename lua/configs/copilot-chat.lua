@@ -1,7 +1,7 @@
 local chat = require "CopilotChat"
 
 chat.setup {
-  debug = true,
+  debug = false,
   context = "buffers",
   window = {
     layout = "vertical",

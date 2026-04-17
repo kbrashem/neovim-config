@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -40,6 +40,8 @@ return {
         "yaml",
         "diff",
         "markdown_inline",
+        "rust",
+        "toml",
       },
     },
   },
@@ -48,6 +50,26 @@ return {
     "ellisonleao/glow.nvim",
     config = true,
     cmd = "Glow",
+  },
+
+  -- Markdown preview in browser
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = "cd app && npm install",
+  },
+
+  -- Claude
+  {
+    "greggh/claude-code.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require "configs.claude-code"
+    end,
   },
 
   -- Copilot
@@ -70,6 +92,7 @@ return {
       { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
       { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
     },
+    build = "make tiktoken",
     config = function()
       require "configs.copilot-chat"
     end,
@@ -78,12 +101,14 @@ return {
   -- Folder tree
   {
     "nvim-tree/nvim-tree.lua",
-    opts = {
-      filters = {
-        dotfiles = false,
-        git_ignored = false,
-      },
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
     },
+    config = function()
+      require "configs.nvim-tree"
+    end,
   },
 
   -- Code folding
@@ -117,4 +142,17 @@ return {
     lazy = false,
   },
 
+  --   -- Sessions
+  --   {
+  --     "rmagatti/auto-session",
+  --     lazy = false,
+  --
+  --     ---enables autocomplete for opts
+  --     ---@module "auto-session"
+  --     ---@type AutoSession.Config
+  --     opts = {
+  --       suppressed_dirs = { "~/", "~/Documents", "~/Downloads", "/" },
+  --       -- log_level = 'debug',
+  --     },
+  --   },
 }

@@ -1,12 +1,14 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    python = { "isort", "black" },
+    python = { "isort", "ruff_format" },
     sql = { "sqlfluff" },
     css = { "prettier" },
     html = { "prettier" },
     javascript = { "prettier" },
     json = { "prettier" },
+    rust = { "rustfmt" },
+    sh = { "shfmt" },
   },
 
   formatters = {

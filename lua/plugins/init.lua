@@ -52,6 +52,14 @@ return {
     cmd = "Glow",
   },
 
+  -- Markdown preview in browser
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = "cd app && npm install",
+  },
+
   -- Claude
   {
     "greggh/claude-code.nvim",

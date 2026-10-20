@@ -45,6 +45,13 @@ return {
       },
     },
   },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    lazy = false,
+    config = function()
+      require "configs.treesitter-context"
+    end,
+  },
 
   {
     "ellisonleao/glow.nvim",
@@ -72,29 +79,37 @@ return {
     end,
   },
 
-  -- Copilot
-  {
-    "zbirenbaum/copilot.lua",
-    -- lazy = false,
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require "configs.copilot"
-    end,
-  },
+  -- -- Copilot
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   -- lazy = false,
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require "configs.copilot"
+  --   end,
+  -- },
 
   -- Copilot Chat
+  -- {
+  --   "CopilotC-Nvim/CopilotChat.nvim",
+  --   lazy = false,
+  --   branch = "main",
+  --   dependencies = {
+  --     { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+  --     { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+  --   },
+  --   build = "make tiktoken",
+  --   config = function()
+  --     require "configs.copilot-chat"
+  --   end,
+  -- },
+  -- Minuet (Claude inline autocomplete)
   {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    lazy = false,
-    branch = "main",
-    dependencies = {
-      { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
-    },
-    build = "make tiktoken",
+    "milanglacier/minuet-ai.nvim",
+    event = "InsertEnter",
     config = function()
-      require "configs.copilot-chat"
+      require "configs.minuet"
     end,
   },
 
@@ -129,6 +144,18 @@ return {
       require "configs.wilder"
     end,
   },
+
+  -- -- Telescope overrides
+  -- {
+  --   "nvim-telescope/telescope.nvim",
+  --   opts = {
+  --     pickers = {
+  --       live_grep = {
+  --         additional_args = { "--glob", ".github/**" },
+  --       },
+  --     },
+  --   },
+  -- },
 
   -- Neogit
   {

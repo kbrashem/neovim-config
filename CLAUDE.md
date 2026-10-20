@@ -24,9 +24,10 @@ This is a Neovim configuration based on NvChad framework that provides a compreh
 - **Formatting**: Conform.nvim with language-specific formatters (stylua, ruff, prettier, rustfmt, etc.)
 - **Git**: Neogit for Git operations, DiffView for diff visualization
 - **AI Assistance**: 
-  - GitHub Copilot with CopilotChat for code completion and chat
+  - Minuet (Claude Haiku) inline autocomplete, needs `ANTHROPIC_API_KEY` in the environment
   - Claude Code integration via claude-code.nvim plugin
-- **Code Intelligence**: Treesitter for syntax highlighting, nvim-ufo for code folding
+- **Code Intelligence**: Treesitter for syntax highlighting, treesitter-context for sticky scope headers, nvim-ufo for code folding
+  - `lua/configs/treesitter-fix.lua` patches nvim-treesitter `master` directives for Neovim >= 0.12
 - **File Management**: nvim-tree file explorer (auto-opens on startup)
 
 ## Development Commands
@@ -34,14 +35,14 @@ This is a Neovim configuration based on NvChad framework that provides a compreh
 ### Setup Requirements
 1. Install Neovim, nerd font, clone repo to `~/.config/nvim`
 2. Run `:MasonInstallAll` to install LSPs and formatters
-3. Authenticate Copilot with `:Copilot auth`
+3. Export `ANTHROPIC_API_KEY` for Minuet autocomplete
 
 ### Key Operations
 - **Save without autoformat**: `:noa w`
 - **LSP Information**: `:LspInfo`
 - **Format manually**: `:Conform`
 - **View format logs**: `:Conform` (see the logs)
-- **Copilot Chat**: `:CopilotChat <message>` or `:CopilotChat` for chat window
+- **Minuet autocomplete**: `<C-f>` accept, `<C-l>` accept line, `<C-]>`/`<C-[>` cycle, `<C-e>` dismiss
 
 ### File Structure Notes
 - Plugin configurations are modularized in `lua/configs/`
